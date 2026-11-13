@@ -1,0 +1,9 @@
+joblib
+mediapipe
+numpy
+opencv_contrib_python
+opencv_python
+PyYAML
+scikit_learn
+Shapely
+ultralytics

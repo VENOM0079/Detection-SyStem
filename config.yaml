@@ -1,0 +1,27 @@
+# Configuration for Behavior Detection System
+
+# General Settings
+input_source: "rtsp://aware:admin123@192.168.89.80:554/cam/realmonitor?channel=16&subtype=0"
+
+# RTSP IP Camera URL
+output_log_format: "json"  # "json" or "csv"
+
+# Phone Detection Settings
+phone_model_path: "models/yolov8n.pt"
+phone_confidence_threshold: 0.5
+iou_threshold: 0.45
+
+# Zone Monitoring Settings
+zones:
+  - name: "Reception Desk"
+    polygon: [[100, 100], [400, 100], [400, 400], [100, 400]]
+    idle_threshold_seconds: 60
+  - name: "Aisle A"
+    polygon: [[500, 100], [800, 100], [800, 700], [500, 700]]
+    idle_threshold_seconds: 30
+
+# Gesture Recognition Settings
+gesture_model_path: "models/gesture_classifier.joblib"
+gesture_confidence_threshold: 0.7
+pose_detection_confidence: 0.5
+pose_tracking_confidence: 0.5
